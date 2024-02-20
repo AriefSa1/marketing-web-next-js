@@ -6,7 +6,7 @@ import Hero from "./Hero";
 import BlogCard from "./BlogCard";
 import Service from "./Service";
 import Testimoni from "./Testimoni";
-import ProductSection from "./product/ProductSection";
+import ProductSection from "./_product/ProductSection";
 
 function Homepage() {
   const { ref, inView } = useInView({threshold: 0.2});

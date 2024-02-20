@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function ProductItem({product}) {
     return (
@@ -24,12 +25,12 @@ function ProductItem({product}) {
                         ))}
                     </div>
                 </div>
-                <a href="#" className="group mt-4 mb-2 p-4 inline-flex items-center gap-1 text-sm font-medium text-fuchsia-600">
+                <Link href={`/product/${product.attributes.slug}`} className="group mt-4 mb-2 p-4 inline-flex items-center gap-1 text-sm font-medium text-fuchsia-600">
                     Shop Now
                     <span aria-hidden="true" className="block transition-all group-hover:ms-0.5 rtl:rotate-180">
                     &rarr;
                     </span>
-                </a>
+                </Link>
             </div>
         </>
     )

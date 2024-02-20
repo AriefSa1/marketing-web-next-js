@@ -12,6 +12,10 @@ const axiosClient = axios.create({
 })
 
 const getLatestProduct = () => axiosClient.get(`${apiUrl}/products?populate=*`);
+
+const getSingleProduct = ({slug}) => axiosClient.get(`${apiUrl}/products?populate=*&filters[slug][$eq]=${slug}`);
+
 export default {
-    getLatestProduct
+    getLatestProduct,
+    getSingleProduct
 }
