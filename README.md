@@ -20,6 +20,21 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## ENV Key
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="clerk publishable key"
+
+CLERK_SECRET_KEY="clerk secret key"
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/auth/sign-in
+
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/auth/sign-up
+
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+NEXT_PUBLIC_REST_API_KEY="strapi api key"
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
