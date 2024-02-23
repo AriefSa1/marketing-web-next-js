@@ -3,7 +3,7 @@ import React from 'react'
 const Breadcrumb = ({slug}) => {
   return (
     <nav aria-label="Breadcrumb">
-    <ol className="mx-auto ml-32 flex items-center gap-1 text-sm text-gray-600">
+    <ol className="mx-auto ml-32 pt-12 flex items-center gap-1 text-sm text-gray-600">
         <li>
         <a href="/" className="block transition hover:text-gray-700">
             <span className="sr-only"> Home </span>

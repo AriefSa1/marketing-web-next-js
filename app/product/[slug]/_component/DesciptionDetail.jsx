@@ -3,7 +3,7 @@ import React from 'react'
 function DesciptionDetail({product}) {
   console.log(product)
   return (
-    <div className='md:mx-20 sm:mx-0 bottom-0'>
+    <div className='item-start justify-center mx-12 md:mx-28 sm:mx-52 bottom-0'>
       <div className='mb-6'>
         <h1 className='text-xl font-semibold'>Deskripsi</h1>
       </div>

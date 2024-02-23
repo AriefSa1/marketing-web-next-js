@@ -21,7 +21,7 @@ function Homepage() {
   }, [inView, animationControls]);
 
   return (
-    <div className="scroll-container" ref={ref}>
+    <div className="scroll-container items-center justify-center max-w-screen-3xl" ref={ref}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
@@ -33,7 +33,7 @@ function Homepage() {
         transition={{duration: 0.5, delay: 0.25}}
       >
         <Hero />
-        <ProductSection />
+        <ProductSection count={4} />
         <BlogCard />
         <Service />
         <Testimoni />
