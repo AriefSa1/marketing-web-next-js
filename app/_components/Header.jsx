@@ -1,10 +1,15 @@
 // Import React hooks and components
 'use client'
-import React from 'react';
+import React, {useState} from 'react';
 import Image from 'next/image';
 import { UserButton, SignedIn, SignedOut, SignOutButton } from '@clerk/nextjs';
 
 function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
     // Navigation items
     const navItems = [
         {
@@ -36,7 +41,7 @@ function Header() {
     return (
         <header className="relative w-full bg-white">
             <div className="mx-auto max-w-screen-2xl border-gray-400 shadow-sm px-4 sm:px-6 lg:px-8">
-                <div className="flex h-16 items-center  justify-around">
+                <div className="flex h-16 items-center justify-between">
                     <div className="md:flex md:items-center md:gap-12">
                         <Image src="/logo.svg" alt="logo" width={90} height={100} />
                     </div>
@@ -52,7 +57,7 @@ function Header() {
                         </nav>
                     </div>
 
-                    <div className="flex items-center gap-4 px-10">
+                    <div className="flex items-center gap-4 px-10 sm:px-2">
                         <SignedIn>
                             <UserButton afterSignOutUrl='/' userProfileMode='navigation' userProfileUrl='/profile' />
                         </SignedIn>
@@ -73,7 +78,7 @@ function Header() {
                             </div>
                         </SignedOut>
                         <div className="block md:hidden">
-                            <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                            <button onClick={toggleMenu} className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="h-5 w-5"
@@ -85,6 +90,20 @@ function Header() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                                 </svg>
                             </button>
+                            {isMenuOpen && (
+                                <div className="mt-2 space-y-2">
+                                    {/* Render your menu items here */}
+                                    {navItems.map((item, index) => (
+                                        <a
+                                            key={index}
+                                            href={item.href}
+                                            className="block px-4 py-2 text-gray-500 transition hover:font-semibold hover:text-fuchsia-600"
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
